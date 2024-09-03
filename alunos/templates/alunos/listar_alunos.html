@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de Alunos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-left: 4px solid #5bc0de;
+            /* Azul claro */
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        li:hover {
+            background-color: #f1f1f1;
+        }
+        
+        li span {
+            display: block;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        li span.label {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lista de Alunos</h1>
+        <ul>
+            {% for aluno in alunos %}
+            <li>
+                <span class="label">Nome:</span> {{ aluno.nome }}
+                <span class="label">Endereço:</span> {{ aluno.endereco }}
+                <span class="label">Cidade:</span> {{ aluno.cidade }}
+                <span class="label">E-mail:</span> {{ aluno.email }}
+                <span class="label">Curso:</span> {{ aluno.curso }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>
